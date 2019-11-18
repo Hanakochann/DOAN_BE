@@ -3,13 +3,16 @@
 if ($_SERVER['REQUEST_METHOD'] =='POST'){
 
     $id_user = $_POST['id_user'];
-    $id_address = $_POST['id_type'];
+    $username = $_POST['username'];
     $price = $_POST['price'];
-
+    $city_name = $_POST['city_name'];
+    $district_name = $_POST['district_name'];
+    $street_name = $_POST['street_name'];
+    $gender = $_POST['gender'];
 
     require_once 'connect.php';
 
-    $sql = "INSERT INTO roommate(id_user, id_address, price) VALUES ('$id_user', '$id_address', '$price')";
+    $sql = "INSERT INTO roommate(id_user, username, price, city_name, district_name, street_name, gender) VALUES ('$id_user', '$username', '$price', '$city_name', '$district_name', '$street_name', '$gender')";
 
     if ( mysqli_query($conn, $sql) ) {
         $result["success"] = "1";
@@ -27,4 +30,5 @@ if ($_SERVER['REQUEST_METHOD'] =='POST'){
         mysqli_close($conn);
     }
 }
+
 ?>

@@ -1,11 +1,9 @@
 <?php
 if ($_SERVER['REQUEST_METHOD']=='POST') {
-    $id = $_POST['id'];
     
     require_once 'connect.php';
 
-    $sql = "SELECT street_name FROM data_street WHERE id_district IN 
-    (SELECT id FROM data_district WHERE id = '$id')";
+    $sql = "SELECT * FROM data_street JOIN data_district ON data_district.id = data_street.id_district";
 
     $response = mysqli_query($conn, $sql);
 

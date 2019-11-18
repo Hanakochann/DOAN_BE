@@ -1,9 +1,8 @@
 <?php
 
-
     require_once 'connect.php';
 
-    $sql = "SELECT room_type FROM type_room ";
+    $sql = "SELECT * FROM type_room ";
 
     $response = mysqli_query($conn, $sql);
 
