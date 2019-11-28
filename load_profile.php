@@ -34,15 +34,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
              mysqli_close($conn);
         }
  
-   }
- 
- }else {
+   }else {
  
      $result["success"] = "0";
      $result["message"] = "Error!";
+
      echo json_encode($result);
- 
      mysqli_close($conn);
+    }
  }
- 
  ?>
