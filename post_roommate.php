@@ -6,14 +6,16 @@ if ($_SERVER['REQUEST_METHOD'] =='POST'){
     $username = $_POST['username'];
     $img_user = $_POST['img_user'];
     $price = $_POST['price'];
+    $note = $_POST['note'];
     $city_name = $_POST['city_name'];
     $district_name = $_POST['district_name'];
+    $ward_name = $_POST['ward_name'];
     $street_name = $_POST['street_name'];
     $gender = $_POST['gender'];
 
     require_once 'connect.php';
 
-    $sql = "INSERT INTO roommate(id_user, username, img_user, price, city_name, district_name, street_name, gender) VALUES ('$id_user', '$username', '$img_user', '$price', '$city_name', '$district_name', '$street_name', '$gender')";
+    $sql = "INSERT INTO roommate(id_user, username, img_user, price, note, city_name, district_name, ward_name, street_name, gender) VALUES ('$id_user', '$username', '$img_user', '$price', '$note', '$city_name', '$district_name', '$ward_name', '$street_name', '$gender')";
 
     if ( mysqli_query($conn, $sql) ) {
         $result["success"] = "1";

@@ -1,9 +1,8 @@
 <?php
 
-
     require_once 'connect.php';
 
-    $sql = "SELECT * FROM data_city ";
+    $sql = "SELECT id, province_name FROM province";
 
     $response = mysqli_query($conn, $sql);
 

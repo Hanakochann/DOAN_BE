@@ -7,10 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] =='POST'){
     $username = $_POST['username'];
     $type_room = $_POST['type_room'];
     $price = $_POST['price'];
+    $lenght = $_POST['lenght'];
+    $width = $_POST['width'];
     $slot_available = $_POST['slot_available'];
     $other = $_POST['other'];
     $city_name = $_POST['city_name'];
     $district_name = $_POST['district_name'];
+    $ward_name = $_POST['ward_name'];
     $street_name = $_POST['street_name'];
     $number = $_POST['number'];
 
@@ -19,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] =='POST'){
 
     require_once 'connect.php';
 
-    $sql = "INSERT INTO room(id_user, username, img_room, type_room, price, slot_available, other, city_name, district_name, street_name, number) VALUES ('$id_user', '$username', '$finalPath', '$type_room', '$price', '$slot_available', '$other', '$city_name', '$district_name', '$street_name', '$number')";
+    $sql = "INSERT INTO room(id_user, username, img_room, type_room, lenght, width, price, slot_available, other, city_name, district_name, ward_name, street_name, number) VALUES ('$id_user', '$username', '$finalPath', '$type_room', '$lenght', '$width', '$price', '$slot_available', '$other', '$city_name', '$district_name', '$ward_name', '$street_name', '$number')";
 
     if ( mysqli_query($conn, $sql) ) {
         if ( file_put_contents( $path, base64_decode($img_room ) ) ){

@@ -3,7 +3,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     
     require_once 'connect.php';
 
-    $sql = "SELECT * FROM data_street JOIN data_district ON data_district.id = data_street.id_district";
+    $sql = "SELECT * FROM street JOIN district ON district.id = street._district_id";
 
     $response = mysqli_query($conn, $sql);
 
