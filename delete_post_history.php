@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     require_once 'connect.php';
 
     $sql = "DELETE FROM room WHERE id = '$id'";
-    unlink('http://192.168.0.105/android_register_login/room_image/'$id'.jpeg');
+    // unlink('http://192.168.0.105/android_register_login/room_image/'$id'.jpeg');
     
     if(mysqli_query($conn, $sql)) {
 

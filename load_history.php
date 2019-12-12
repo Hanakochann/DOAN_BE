@@ -19,12 +19,16 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
             $h['type_room']       = $row['type_room'] ;
             $h['price']       = $row['price'] ;
             $h['slot_available']       = $row['slot_available'] ;
+            $h['lenght']       = $row['lenght'] ;
+            $h['width']       = $row['width'] ;
             $h['other']       = $row['other'] ;
             $h['img_room']       = $row['img_room'] ;
             $h['city_name']       = $row['city_name'] ;
             $h['district_name']       = $row['district_name'] ;
+            $h['ward_name']       = $row['ward_name'] ;
             $h['street_name']       = $row['street_name'] ;
             $h['number']        = $row['number'] ;
+            $h['time_post']        = $row['time_post'] ;
             array_push($result, $h);
         }
              echo json_encode($result);

@@ -11,11 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] =='POST'){
     $district_name = $_POST['district_name'];
     $ward_name = $_POST['ward_name'];
     $street_name = $_POST['street_name'];
-    $gender = $_POST['gender'];
+    $gender_roommate = $_POST['gender_roommate'];
 
     require_once 'connect.php';
 
-    $sql = "INSERT INTO roommate(id_user, username, img_user, price, note, city_name, district_name, ward_name, street_name, gender) VALUES ('$id_user', '$username', '$img_user', '$price', '$note', '$city_name', '$district_name', '$ward_name', '$street_name', '$gender')";
+    $sql = "INSERT INTO roommate(id_user, username, img_user, price, note, city_name, district_name, ward_name, street_name, gender_roommate) VALUES ('$id_user', '$username', '$img_user', '$price', '$note', '$city_name', '$district_name', '$ward_name', '$street_name', '$gender_roommate')";
 
     if ( mysqli_query($conn, $sql) ) {
         $result["success"] = "1";
