@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
 
     require_once 'connect.php';
 
-    $sql = "SELECT * FROM room JOIN user ON room.id_user = user.id";
+    $sql = "SELECT * FROM room JOIN user ON room.id_user = user.id JOIN image_room ON image_room.id = room.id";
 
     $response = mysqli_query($conn, $sql);
 
@@ -20,12 +20,13 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
             $h['width']       = $row['width'] ;
             $h['slot_available']       = $row['slot_available'] ;
             $h['other']       = $row['other'] ;
-            $h['img_room']       = $row['img_room'] ;
+            $h['image_name']       = $row['image_name'] ;
             $h['city_name']       = $row['city_name'] ;
             $h['district_name']       = $row['district_name'] ;
             $h['ward_name']       = $row['ward_name'] ;
             $h['street_name']       = $row['street_name'] ;
             $h['number']        = $row['number'] ;
+            $h['verified']        = $row['verified'] ;
             $h['time_post']        = $row['time_post'] ;
             $h['birthday']        = $row['birthday'] ;
             $h['hometown']        = $row['hometown'] ;

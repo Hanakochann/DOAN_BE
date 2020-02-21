@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
             $h['ward_name']       = $row['ward_name'] ;
             $h['street_name']       = $row['street_name'] ;
             $h['phone']       = $row['phone'] ;
+            $h['note']       = $row['note'] ;
             $h['gender_roommate']        = $row['gender_roommate'] ;
             $h['time_post']        = $row['time_post'] ;
             array_push($result, $h);

@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $photo = $_POST['photo'];
 
     $path = "profile_image/$id.jpeg";
-    $finalPath = "http://192.168.119.29/android_register_login/".$path;
+    $finalPath = "http://192.168.43.69/android_register_login/".$path;
 
     require_once 'connect.php';
 

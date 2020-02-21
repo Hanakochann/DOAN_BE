@@ -1,15 +1,16 @@
 <?php
 
-if($_SERVER['REQUEST_METHOD'] == 'GET'){
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-    $id = $_GET['id'];
+    $id = $_POST['id'];
 
     require_once 'connect.php';
 
     $sql = "DELETE FROM room WHERE id = '$id'";
-    // unlink('http://192.168.0.105/android_register_login/room_image/'$id'.jpeg');
+    $sql1 = "DELETE FROM image_room WHERE id = '$id'";
+    // unlink('http://192.168.0.104/android_register_login/room_image/'$id'.jpeg');
     
-    if(mysqli_query($conn, $sql)) {
+    if(mysqli_query($conn, $sql) && mysqli_query($conn, $sql1)) {
 
           $result["success"] = "1";
           $result["message"] = "success";

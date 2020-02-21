@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
 
     require_once 'connect.php';
 
-    $sql = "SELECT * FROM room WHERE id_user = '$id_user'";
+    $sql = "SELECT * FROM room JOIN image_room ON image_room.id = room.id WHERE id_user = '$id_user'";
 
     $response = mysqli_query($conn, $sql);
 
@@ -22,7 +22,8 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
             $h['lenght']       = $row['lenght'] ;
             $h['width']       = $row['width'] ;
             $h['other']       = $row['other'] ;
-            $h['img_room']       = $row['img_room'] ;
+            $h['image_name']       = $row['image_name'] ;
+            $h['verified']        = $row['verified'] ;
             $h['city_name']       = $row['city_name'] ;
             $h['district_name']       = $row['district_name'] ;
             $h['ward_name']       = $row['ward_name'] ;

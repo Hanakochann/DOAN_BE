@@ -6,9 +6,10 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
     require_once 'connect.php';
 
-    $sql = "DELETE * FROM room WHERE id_user = $id_user";
+    $sql = "DELETE FROM room WHERE id_user = $id_user";
+    $sql1 = "DELETE FROM roommate WHERE id_user = $id_user";
     
-    if(mysqli_query($conn, $sql)) {
+    if(mysqli_query($conn, $sql) && mysqli_query($conn, $sql1)) {
 
           $result["success"] = "1";
           $result["message"] = "success";
